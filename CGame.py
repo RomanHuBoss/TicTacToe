@@ -1,9 +1,10 @@
+"""Модуль непосредственно игры и ее состояния"""
 import re
 from constants import E_GAME_STATUS
 from constants import E_PLAYER_TYPE, player_names, marker_names, BOARD_SIZE
 from CBoard import CBoard
 
-"""Модуль непосредственно игры и ее состояния"""
+
 class CGame:
     board = CBoard()
     current_player = None

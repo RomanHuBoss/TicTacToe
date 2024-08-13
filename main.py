@@ -1,3 +1,4 @@
+"""модуль является точкой входа в программу"""
 from CGame import CGame
 
 game = CGame()
