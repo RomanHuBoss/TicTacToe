@@ -16,7 +16,7 @@ class CGame:
     def start(self):
         """Метод инициализации и запуска новой игры"""
         if self.game_status == E_GAME_STATUS.PLAYING:
-            raise Exception('Ошибочная инициализация уже активной игры')
+            raise ValueError('Ошибочная инициализация уже активной игры')
 
         print('===НАЧАЛО НОВОЙ ИГРЫ===')
         self.board.clear()
@@ -40,7 +40,7 @@ class CGame:
         self.step += 1
         print(f'[Раунд №{self.step}]')
 
-        for i in range(2):
+        for _ in range(2):
             self.board.print()
             self.get_user_input()
             self.winner = self.board.check_winning_state()
