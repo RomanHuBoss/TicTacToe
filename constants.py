@@ -1,5 +1,6 @@
 from enum import Enum
 
+"""Константы и перечисления, используемые игрой"""
 BOARD_SIZE = 3
 E_PLAYER_TYPE = Enum(value = 'PLAYER_TYPE', names = ['CROSS', 'ZERO'])
 E_GAME_STATUS = Enum(value ='GAME_STATUS', names = ['PLAYING', 'FINISHED'])
