@@ -1,5 +1,5 @@
 """модуль является точкой входа в программу"""
-from CGame import CGame
+from cgame import CGame
 
 game = CGame()
 
