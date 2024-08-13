@@ -14,6 +14,7 @@ class CGame:
     step = 0
 
     def start(self):
+        """Метод инициализации и запуска новой игры"""
         if self.game_status == E_GAME_STATUS.PLAYING:
             raise Exception('Ошибочная инициализация уже активной игры')
 
@@ -35,6 +36,7 @@ class CGame:
             print(f'Победил игрок, использующий {player_names[self.winner]}')
 
     def make_step(self) -> None:
+        """Обработка хода очередного игрока"""
         self.step += 1
         print(f'[Раунд №{self.step}]')
 
@@ -54,6 +56,7 @@ class CGame:
             self.change_current_player()
 
     def get_user_input(self):
+        """Получение координат клетки, введенных пользователем с клавиатуры"""
         print(f'Ход игрока, использующего {player_names[self.current_player]}')
         while True:
             user_input = input(
@@ -88,16 +91,23 @@ class CGame:
 
 
     def change_current_player(self):
-        self.current_player = E_PLAYER_TYPE.CROSS if self.current_player == E_PLAYER_TYPE.ZERO else E_PLAYER_TYPE.ZERO
+        """Смена игрока после очередного хода"""
+        self.current_player = E_PLAYER_TYPE.CROSS \
+            if self.current_player == E_PLAYER_TYPE.ZERO \
+            else E_PLAYER_TYPE.ZERO
 
     def get_current_player(self) -> E_PLAYER_TYPE:
+        """Получение данных о том, кто ходит в данный момент"""
         return self.current_player
 
     def get_status(self) -> E_GAME_STATUS:
+        """Возвращает статус игры"""
         return self.game_status
 
     def get_winner(self) -> E_PLAYER_TYPE:
+        """Возвращает информацию о победителе"""
         return self.winner
 
     def get_step(self) -> int:
+        """Получает номер очередного хода игры"""
         return self.step
