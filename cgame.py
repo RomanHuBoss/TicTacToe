@@ -57,7 +57,10 @@ class CGame:
         print(f'Ход игрока, использующего {player_names[self.current_player]}')
         while True:
             user_input = input(
-                f'> Укажите клетку, в которую будете ставить {marker_names[self.current_player]}, в виде пары чисел (номер строки и номер столбца), разделенных любыми символами: ')
+                f'> Укажите клетку, в которую будете '
+                f'ставить {marker_names[self.current_player]}, '
+                f'в виде пары чисел (номер строки и номер столбца), '
+                f'разделенных любыми символами: ')
 
             if not re.fullmatch(r'^\d+[^\d]+\d+$', user_input):
                 print("Клетка указана некорректно. Повторите ввод.")
@@ -67,11 +70,13 @@ class CGame:
             row_index, column_index = int(matches.group(1)), int(matches.group(2))
 
             if row_index < 0 or row_index > BOARD_SIZE - 1:
-                print(f'Некорректное значение строки. Укажите число в интервале [0, {BOARD_SIZE-1}]')
+                print(f'Некорректное значение строки. '
+                      f'Укажите число в интервале [0, {BOARD_SIZE-1}]')
                 continue
 
             if column_index < 0 or column_index > BOARD_SIZE - 1:
-                print(f'Некорректное значение столбца. Укажите число в интервале [0, {BOARD_SIZE-1}]')
+                print(f'Некорректное значение столбца. '
+                      f'Укажите число в интервале [0, {BOARD_SIZE-1}]')
                 continue
 
             if not self.board.is_empty_cell(row_index, column_index):
