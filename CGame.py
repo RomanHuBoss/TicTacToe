@@ -2,7 +2,7 @@
 import re
 from constants import E_GAME_STATUS
 from constants import E_PLAYER_TYPE, player_names, marker_names, BOARD_SIZE
-from CBoard import CBoard
+from cboard import CBoard
 
 
 class CGame:
