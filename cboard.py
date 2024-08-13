@@ -1,8 +1,8 @@
 """Модуль работы с игровым полем"""
 from constants import E_PLAYER_TYPE, BOARD_SIZE
 
-"""Класс представления игрового поля"""
 class CBoard:
+    """Класс представления игрового поля"""
     data = None
 
     def __init__(self):

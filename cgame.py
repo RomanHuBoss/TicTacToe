@@ -6,6 +6,7 @@ from cboard import CBoard
 
 
 class CGame:
+    """Класс непосредственно игрового процесса"""
     board = CBoard()
     current_player = None
     game_status = None
