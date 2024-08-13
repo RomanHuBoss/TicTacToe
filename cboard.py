@@ -11,11 +11,13 @@ class CBoard:
         ]
 
     def clear(self):
+        """Очищает игровое поле"""
         for row_idx in range(BOARD_SIZE):
             for column_idx in range(BOARD_SIZE):
                 self.data[row_idx][column_idx] = '-'
 
     def print(self):
+        """Выводит игровое поле на экран"""
         print("Текущее состояние игрового поля")
         print(' ', ' '.join(map(str, list(range(BOARD_SIZE)))), ' ')
         for row_idx in range(BOARD_SIZE):
@@ -23,15 +25,19 @@ class CBoard:
 
 
     def set_cell_value(self, row_idx, column_id, player) -> int:
+        """Устанавливает значение клетки игрового поля"""
         self.data[row_idx][column_id] = 'x' if player == E_PLAYER_TYPE.CROSS else 'o'
 
     def get_cell_value(self, row_idx, column_idx) -> int:
+        """Возвращает значение клетки игрового поля"""
         return self.data[row_idx][column_idx]
 
     def is_empty_cell(self, row_idx, column_idx):
+        """проверка клетки игрового поля на пустоту"""
         return self.data[row_idx][column_idx] == '-'
 
     def is_completely_filled(self):
+        """Проверка полностью отыгранного игрового поля (все клетки проверены)"""
         board_stringified = ''.join(str(cell) for row in self.data for cell in row)
         try:
             board_stringified.index('-')
@@ -40,6 +46,7 @@ class CBoard:
             return True
 
     def check_winning_state(self):
+        """Проверка победителя"""
 
         # проверим построчно наличие победителя
         for row in self.data:
